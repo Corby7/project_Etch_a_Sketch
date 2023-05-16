@@ -10,12 +10,18 @@
 <body>
     <div id="flex-container">
         <div id="title"><h1>Etch-a-Sketch</h1></div>
+
         <div id="content">
-            <div id="board"></div> 
-            <div id="sizeprompt">
-                <p>Grid size:</p>
-                <input type="number" name="gridsize" id="gridsize" value="16" min="1" max="100">
-            </div>
+            <div id="board"></div>
+            
+            <div id="form">
+                <div id="sizeprompt">
+                    <p>Grid size:</p>
+                    <input type="text" placeholder="Size of board" id="gridsize" value="16" min="1" max="100">
+                    <button id="user-submit">Submit</button>
+                </div>
+                <p id="size-alert"></p>
+            </div>  
 
             <div id="buttons">
                 <button>Black</button>

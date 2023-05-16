@@ -12,17 +12,14 @@
 }
 
 #board {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 640px;
+    display: grid;
+    width: 600px;
+    height: 600px;
     background-color: red;
-    margin: 50px;
 }
 
 #cellBoard {
-    height: 40px;
-    width: 40px;
+    flex: 1;
     background-color: black;
 }
 
