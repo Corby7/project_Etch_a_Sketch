@@ -1,14 +1,37 @@
-#flex-container {
+* {
+    font-family: monospace;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: 2px 2px black;
+}
+
+body {
+    background-image: linear-gradient(to bottom right, rgb(140, 140, 140), rgb(110, 110, 110), rgb(60, 60, 60));
+    background-attachment: fixed;
+}
+
+h1 {
+    font-size: 40px;
+    color: coral;
+    text-shadow: -5px 0 black, 0 5px black, 5px 0 black, 0 -5px black;
+    margin-top: 40px;
+}
+
+body, #flex-container, #content, #form {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
 }
 
-#content {
+#flex-container, #form {
+    justify-content: center;
+}
+
+#sizeprompt, .buttons {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    gap: 10px;
 }
 
 #board {
@@ -16,13 +39,132 @@
     width: 600px;
     height: 600px;
     background-color: red;
+    border: 10px solid black;
+    border-radius: 2%;
+    box-shadow: 4px 6px black;
 }
 
 #cellBoard {
     flex: 1;
-    background-color: black;
+    background-color: white;
 }
 
 #cellBoard:hover {
-    background-color: white ;
+    background-color: black ;
+}
+
+#form {
+    padding-top: 10px;
+    margin-bottom: 0px;
+}
+
+/*Value input and size alert*/
+
+#sizeprompt {
+    align-items: baseline;
+    padding-top: 10px;
+}
+
+#size-alert {
+    color: red;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+#gridsize {
+    height: 20px;
+    width: 40px;
+    border: 4px dashed black;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#gridsize:focus-visible {
+    border: 4px solid black;
+}
+
+/*Button styling*/
+
+.buttons {
+    align-items: center;
+}
+
+button:hover, #colorpicker:hover {
+    cursor: pointer;
+    box-shadow: 4px 6px #999;
+}
+
+button:active, #colorpicker:active {
+    cursor: pointer;
+    box-shadow: 4px 4px rgb(36, 36, 36);
+    transform: translateY(2px);
+}
+
+#random {
+    text-shadow: none;
+}
+
+#clear, #user-submit, #black, #colorpicker, #random {
+    border: 4px solid black;
+}
+
+#clear, #user-submit {
+    position: relative;
+    height: 35px;
+    width: 100px;
+    border-radius: 5px;
+    background-color: coral;
+    margin-left: 10px;
+}
+
+#clear {
+    margin-left: 30px;
+}
+
+input {
+    width: 50px;
+    height: 50px;
+    border: 4px solid white;
+    background-color: rgb(119, 118, 118);
+
+}
+
+#black, #colorpicker, #random {
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+#random {
+    color: black;
+    font-size: 22px;
+    text-align: center;
+}
+
+#black, #colorpicker {
+    background-color: black;
+}
+
+#colorpicker {
+    border: none;
+}
+
+#colorpicker::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+
+#colorpicker::-webkit-color-swatch {
+    border: solid 3px black;
+    border-radius: 50%;
+}
+
+/*Footer*/
+
+h2 {
+    font-size: 16px;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
 }

@@ -8,28 +8,32 @@
     <title>Etch-a-Sketch</title>
 </head>
 <body>
+    <head><h1>Etch-a-Sketch</h1></head>
     <div id="flex-container">
-        <div id="title"><h1>Etch-a-Sketch</h1></div>
 
         <div id="content">
             <div id="board"></div>
             
             <div id="form">
                 <div id="sizeprompt">
-                    <p>Grid size:</p>
-                    <input type="text" placeholder="Size of board" id="gridsize" value="16" min="1" max="100">
-                    <button id="user-submit">Submit</button>
+                    <p>Grid Size:</p>
+                    <input id="gridsize" type="text" value="16" onfocus="focusWarning()" onblur="blurWarning()" onkeyup="mirrorInput()">
+                    <p id="copy-input"></p>
+                    <button id="user-submit" onclick="submitSize()">Submit.</button>
                 </div>
                 <p id="size-alert"></p>
             </div>  
 
-            <div id="buttons">
-                <button>Black</button>
-                <button>White</button>
-                <button>Erase</button>
+            <div class="buttons">
+                <p>Color:</p>
+                <button id="black" onclick="drawBlack()"></button>
+                <input id="colorpicker" oninput="drawPickedColor() "type="color" value="#FF7F50">
+                <button id="random" onclick="drawRandom()">?</button>
+                <button id="clear" onclick="clearBoard()">Clear.</button>
             </div>
         </div>
     </div>
+    <footer><h2>/JulesCorbijn/</h2></footer>
 <script src="script.js"></script>  
 </body>
 </html>
